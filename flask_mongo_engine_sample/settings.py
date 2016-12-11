@@ -1,3 +1,8 @@
+VIEWS = (
+    'flask_mongo_engine_sample_persons',
+)
+
+
 class Config(object):
     DEBUG = False
     TESTING = False
