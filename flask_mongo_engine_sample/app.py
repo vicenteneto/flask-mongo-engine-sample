@@ -4,6 +4,7 @@ from flask import Flask
 from flask_cors import CORS
 
 from flask_mongo_engine_sample import settings
+from flask_mongo_engine_sample.extensions import db
 from flask_mongo_engine_sample.settings import VIEWS
 from flask_mongo_engine_sample_util.constants import Settings
 
@@ -16,6 +17,7 @@ def create_app(config=None):
         app.config.from_object(configuration)
 
     CORS(app)
+    db.init_app(app)
 
     __register_blueprints(app)
 
